@@ -1,0 +1,8 @@
+{
+	admin off
+	acme_ca https://step-ca.ipn.rahulsalvi.com/acme/acme/directory
+	email rahulsalvi@rahulsalvi.com
+}
+
+import /etc/caddy/sites_enabled/Caddyfile
+import /etc/caddy/sites_enabled/*.caddy
