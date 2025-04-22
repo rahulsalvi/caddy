@@ -1,4 +1,4 @@
-FROM caddy:2.9.1
+FROM caddy:2.10.0
 
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY ext/pki/tls/*.crt /usr/local/share/ca-certificates
