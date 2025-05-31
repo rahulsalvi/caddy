@@ -1,5 +1,11 @@
 FROM caddy:2.10.0
 
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY globals.caddy /etc/caddy/globals.caddy
 COPY ext/pki/tls/*.crt /usr/local/share/ca-certificates
-RUN cat /usr/local/share/ca-certificates/*.crt >> /etc/ssl/certs/ca-certificates.crt
+RUN apk --no-cache add ca-certificates && update-ca-certificates
+
+# add a blank caddyfile to avoid breaking compatibility with existing setups
+# eventually need to remove this
+RUN touch /etc/caddy/Caddyfile
+
+CMD ["caddy", "run", "--config", "/etc/caddy/globals.caddy", "--adapter", "caddyfile"]
