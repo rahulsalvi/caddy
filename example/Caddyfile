@@ -1,3 +1,0 @@
-caddy.ipn.rahulsalvi.com {
-	respond "Hello World!"
-}
