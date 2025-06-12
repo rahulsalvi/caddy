@@ -5,4 +5,3 @@
 }
 
 import /etc/caddy/Caddyfile
-import /etc/caddy/sites_enabled/Caddyfile
